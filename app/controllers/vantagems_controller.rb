@@ -1,7 +1,7 @@
 class VantagemsController < ApplicationController
   before_action :set_vantagem, only: [:show, :edit, :update, :destroy]
 
-  # GET /vantagems
+  # GET /vantagem
   # GET /vantagems.json
   def index
     @vantagems = Vantagem.all
@@ -28,7 +28,7 @@ class VantagemsController < ApplicationController
 
     respond_to do |format|
       if @vantagem.save
-        format.html { redirect_to @vantagem, notice: 'Vantagem criada com sucesso }
+        format.html { redirect_to @vantagem, notice: 'Tipo criado com sucesso' }
         format.json { render :show, status: :created, location: @vantagem }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class VantagemsController < ApplicationController
   def update
     respond_to do |format|
       if @vantagem.update(vantagem_params)
-        format.html { redirect_to @vantagem, notice: 'Vantagem editado com sucesso' }
+        format.html { redirect_to @vantagem, notice: 'Tipo editado com sucesso' }
         format.json { render :show, status: :ok, location: @vantagem }
       else
         format.html { render :edit }
@@ -54,9 +54,9 @@ class VantagemsController < ApplicationController
   # DELETE /vantagems/1
   # DELETE /vantagems/1.json
   def destroy
-    @vantagem.destroy
+    @vantagems.destroy
     respond_to do |format|
-      format.html { redirect_to vantagems_url, notice: 'Vantagem apagado com sucesso' }
+      format.html { redirect_to vantagems_url, notice: 'Tipo apagado com sucesso' }
       format.json { head :no_content }
     end
   end
@@ -68,7 +68,7 @@ class VantagemsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def vantagem_params
+    def tipo_params
       params.require(:vantagem).permit(:nome)
     end
 end
