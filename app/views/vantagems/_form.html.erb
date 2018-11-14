@@ -1,0 +1,26 @@
+<%= form_with(model: vantagem, local: true) do |form| %>
+  <% if vantagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vantagem.errors.count, "error") %> prohibited this vantagem from being saved:</h2>
+
+      <ul>
+      <% vantagem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="card">
+   <div class="field">
+       <%= form.label :nome %>
+       <%= form.text_field :nome, class: 'form-control' %>
+     </div>
+
+     <div class="actions">
+       <%= form.submit "Criar nova", class: 'btn' %>
+     </div>
+</div>
+
+<% end %>

@@ -1,0 +1,2 @@
+module VantagemsHelper
+end

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+   <p>
+     <strong>Nome:</strong>
+     <%= @fraqueza.nome %>
+   </p>
+
+</div>
+
+<%= link_to 'Editar', edit_fraqueza_path(@fraqueza), class: 'link-to-text-color' %> |
+<%= link_to 'Voltar', fraquezas_path, class: 'link-to-text-color' %>

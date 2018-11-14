@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Segunda fase</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fase2s.each do |fase2| %>
+      <tr>
+        <td><%= fase2.nome %></td>
+        <td><button class="btn"><%= link_to 'Ver', fase2, class: 'link-to-text-color' %></button></td>
+        <td><button class="btn"><%= link_to 'Editar', edit_fase2_path(fase2), class: 'link-to-text-color' %></button></td>
+        <td><button class="btn"><%= link_to 'Excluir', fase2, method: :delete, class: 'link-to-text-color', data: { confirm: 'Você tem certeza?' } %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Segunda fase', new_fase2_path, class: 'link-to-text-color' %>

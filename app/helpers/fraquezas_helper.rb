@@ -1,0 +1,2 @@
+module FraquezasHelper
+end

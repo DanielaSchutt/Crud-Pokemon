@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Pokemons</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">2ª Fase</th>
+      <th scopo="col">3ª Fase</th>
+      <th scope="col" colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.nome %></td>
+        <td><%= pokemon.tipo.nome %></td>
+        <td><%= pokemon.fase2.nome %></td>
+        <td><%= pokemon.fase3.nome %></td>
+        <td><button class="btn"><%= link_to 'Ver', pokemon, class: 'link-to-text-color' %></button></td>
+        <td><button class="btn"> <%= link_to 'Editar', edit_pokemon_path(pokemon), class: 'link-to-text-color' %> </button></td>
+        <td><button class="btn"><%= link_to 'Excluir', pokemon, class: 'link-to-text-color', method: :delete, data: { confirm: 'Tem certeza?' } %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Pokemon', new_pokemon_path, class: 'link-to-text-color' %>

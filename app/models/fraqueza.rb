@@ -1,0 +1,2 @@
+class Fraqueza < ApplicationRecord
+end

@@ -1,0 +1,55 @@
+<%= form_with(model: pokemon, local: true) do |form| %>
+  <% if pokemon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pokemon.errors.count, "error") %> prohibited this pokemon from being saved:</h2>
+
+      <ul>
+      <% pokemon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="card">
+      <div class="field">
+        <%= form.label :nome %>
+        <%= form.text_field :nome, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :peso %>
+        <%= form.text_field :peso, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :altura %>
+        <%= form.text_field :altura, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+         <%= form.label :Tipo %>
+
+         <%= collection_select(:pokemon, :tipo_id, Tipo.all, :id, :nome, {prompt: "Escolha um tipo"}, {class: "form-control"}) %>
+       </div>
+       <div class="field">
+         <%= form.label :Segunda_fase %>
+         <%= collection_select(:pokemon, :fase2_id, Fase2.all, :id, :nome, {prompt: "Escolha uma evolução"}, {class: "form-control"}) %>
+       </div>
+       <div class="field">
+         <%= form.label :Terceira_fase %>
+         <%= collection_select(:pokemon, :fase3_id, Fase3.all, :id, :nome, {prompt: "Escolha uma evolução"}, {class: "form-control"}) %>
+       </div>
+       <div class="field">
+         <%= form.label :Vantagem %>
+         <%= collection_select(:pokemon, :vantagem_id, Vantagem.all, :id, :nome, {prompt: "Escolha uma vantagem"}, {class: "form-control"}) %>
+       </div>
+
+       <div class="field">
+         <%= form.label :Fraqueza %>
+         <%= collection_select(:pokemon, :fraqueza_id, Fraqueza.all, :id, :nome, {prompt: "Escolha uma fraqueza"}, {class: "form-control"}) %>
+       </div>
+      <div class="actions">
+        <%= form.submit "Criar novo", class: 'btn'%>
+      </div>
+    </div>
+<% end %>

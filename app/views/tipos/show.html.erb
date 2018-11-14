@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <p>
+    <strong>Nome:</strong>
+    <%= @tipo.nome %>
+  </p>
+
+</div>
+
+<%= link_to 'Editar', edit_tipo_path(@tipo), class: 'link-to-text-color' %> |
+<%= link_to 'Voltar', tipos_path, class: 'link-to-text-color' %>

@@ -1,0 +1,25 @@
+<%= form_with(model: fraqueza, local: true) do |form| %>
+  <% if fraqueza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fraqueza.errors.count, "error") %> prohibited this fraqueza from being saved:</h2>
+
+      <ul>
+      <% fraqueza.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="card">
+   <div class="field">
+       <%= form.label :nome %>
+       <%= form.text_field :nome, class: 'form-control' %>
+     </div>
+
+     <div class="actions">
+       <%= form.submit "Criar nova", class: 'btn' %>
+     </div>
+</div>
+
+<% end %>

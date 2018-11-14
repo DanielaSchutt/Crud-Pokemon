@@ -1,0 +1,25 @@
+<%= form_with(model: fase3, local: true) do |form| %>
+  <% if fase3.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fase3.errors.count, "error") %> prohibited this fase3 from being saved:</h2>
+
+      <ul>
+      <% fase3.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="card">
+   <div class="field">
+       <%= form.label :nome %>
+       <%= form.text_field :nome, class: 'form-control' %>
+     </div>
+
+     <div class="actions">
+       <%= form.submit "Criar nova", class: 'btn' %>
+     </div>
+</div>
+
+<% end %>

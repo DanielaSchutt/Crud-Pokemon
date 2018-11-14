@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tipos</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipos.each do |tipo| %>
+      <tr>
+        <td><%= tipo.nome %></td>
+        <td><button class="btn"><%= link_to 'Ver', tipo, class: 'link-to-text-color' %></button></td>
+        <td><button class="btn"><%= link_to 'Editar', edit_tipo_path(tipo), class: 'link-to-text-color' %></button></td>
+        <td><button class="btn"><%= link_to 'Excluir', tipo, class: 'link-to-text-color', method: :delete, data: { confirm: 'Tem certeza?' } %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo tipo', new_tipo_path, class: 'link-to-text-color' %>

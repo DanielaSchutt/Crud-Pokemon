@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <p>
+    <strong>Nome:</strong>
+    <%= @fase3.nome %>
+  </p>
+
+</div>
+
+<%= link_to 'Editar', edit_fase3_path(@fase3), class: 'link-to-text-color' %> |
+<%= link_to 'Voltar', fase3s_path, class: 'link-to-text-color' %>

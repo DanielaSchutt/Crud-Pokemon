@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+   <div class="card">
+        <h4><%= @pokemon.nome %> </h4>
+
+        <p>
+          <strong>Peso:</strong>
+          <%= @pokemon.peso %>
+        </p>
+
+        <p>
+          <strong>Altura:</strong>
+          <%= @pokemon.altura %>
+        </p>
+
+        <p>
+          <strong>Tipo:</strong>
+          <%= @pokemon.tipo.nome %>
+        </p>
+
+        <p>
+          <strong>Vantagem:</strong>
+          <%= @pokemon.vantagem.nome%>
+        </p>
+
+        <p>
+          <strong>Fraqueza:</strong>
+          <%= @pokemon.fraqueza.nome %>
+        </p>
+        <hr>
+        <h5>Evoluções</h5>
+        <p>
+          <strong>Segunda Fase:</strong>
+          <%= @pokemon.fase2.nome %>
+        </p>
+        <p>
+          <strong>Terceira fase:</strong>
+          <%= @pokemon.fase3.nome %>
+        </p>
+   </div>
+<%= link_to 'Editar', edit_pokemon_path(@pokemon), class: 'link-to-text-color' %> |
+<%= link_to 'Voltar', pokemons_path, class: 'link-to-text-color' %>

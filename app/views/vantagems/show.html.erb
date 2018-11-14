@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+ <p>
+   <strong>Nome:</strong>
+   <%= @vantagem.nome %>
+ </p>
+
+</div>
+
+<%= link_to 'Editar', edit_vantagem_path(@vantagem), class: 'link-to-text-color' %> |
+<%= link_to 'Voltar', vantagems_path, class: 'link-to-text-color' %>

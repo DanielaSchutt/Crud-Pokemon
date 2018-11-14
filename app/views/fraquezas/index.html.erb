@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fraquezas</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fraquezas.each do |fraqueza| %>
+      <tr>
+        <td><%= fraqueza.nome %></td>
+        <td><button class="btn"><%= link_to 'Ver', fraqueza, class: 'link-to-text-color' %></button></td>
+        <td><button class="btn"><%= link_to 'Editar', edit_fraqueza_path(fraqueza), class: 'link-to-text-color' %></button></td>
+        <td><button class="btn"><%= link_to 'Excluir', fraqueza, class: 'link-to-text-color', method: :delete, data: { confirm: 'Tem certeza?' } %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova fraqueza', new_fraqueza_path, class: 'link-to-text-color' %>

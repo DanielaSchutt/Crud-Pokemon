@@ -1,0 +1,2 @@
+class Vantagem < ApplicationRecord
+end
